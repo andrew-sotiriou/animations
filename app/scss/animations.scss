@@ -20,6 +20,7 @@ body{
 //Sun and Rays
 
 .sun { 
+  @include border-radius(50%);
   position: absolute;
   top:-6px;
   left:-15px;
@@ -27,7 +28,6 @@ body{
   bottom:0; 
   width:70px;
   height:70px;
-  @include border-radius(50%);
   background:#ffff00;
   opacity:0.9;      
   box-shadow: 0px 0px 40px 15px #ffffed; 
@@ -35,100 +35,100 @@ body{
 
 //Ray Container
 .ray-box{
+  @include animation(ray_anim 120s linear infinite);  
   position: absolute;
   top:0px;
   left:0;
   right:0;
   bottom:0; 
   width:70px;
-  @include animation(ray_anim 120s linear infinite);  
 
   //Look and feel for each ray
   .ray {  
     @include linear-gradient(#ffff00, #ffffc4, #ffffed);
-    margin-left: 10px;
     @include border-radius(90% 90% 90% 90%);
+    margin-left: 10px;
     position: absolute;
     opacity: 0.2;
   }
 
     /*Each ray's attributes can be modified here*/
-    .ray1 {    
+    .ray1 {
+      @include rotate(180deg);    
       height:170px;
       width:30px;
-      @include rotate(180deg);
       top:-175px;
       left: 15px;
     }
 
     .ray2 {
+      @include rotate(220deg);
       height:100px;
       width:8px;
-      @include rotate(220deg);
       top:-90px;
       left: 75px;
     }
 
     .ray3 {
+      @include rotate(250deg);
       height:170px;
       width:50px;
-      @include rotate(250deg);
       top:-80px;
       left: 100px;
     }
 
     .ray4 {
+      @include rotate(305deg);
       height:120px;
       width:14px;
-      @include rotate(305deg);
       top:30px;
       left: 100px;
     }
 
     .ray5 {
+      @include rotate(-15deg);
       height:140px;
       width:30px;
-      @include rotate(-15deg);
       top:60px;
       left: 40px;
     }
 
     .ray6 {
+      @include rotate(30deg);
       height:90px;
       width:50px; 
-      @include rotate(30deg);
       top:60px;
       left: -40px;
     }
 
     .ray7 {
+      @include rotate(70deg);
       height:180px;
       width:10px;  
-      @include rotate(70deg);
       top:-35px;
       left: -40px;
     }
 
     .ray8 {
+      @include rotate(100deg);
       height:120px;
       width:30px;
-      @include rotate(100deg);
       top:-45px;
       left:-90px;
     }
 
     .ray9 {
+      @include rotate(120deg);
       height:80px;
       width:10px; 
-      @include rotate(120deg);
       top:-65px;
       left:-60px;
     }
 
     .ray10 {
+      @include rotate(150deg);
       height:190px;
       width:23px;  
-      @include rotate(150deg);
       top:-185px;
       left: -60px;
     }  
@@ -177,13 +177,15 @@ body{
 
 //Cloud Shape Class
 .cloud{
+  @include border-radius(200px);
   width: 200px; 
   height: 60px;
   background: #fff;
-  @include border-radius(200px);
   position: relative; 
 
   &:before, &:after{
+    @include border-radius(100px);
+    @include rotate(30deg);
     content: '';
     position: absolute; 
     background: #fff;
@@ -192,8 +194,6 @@ body{
     position: absolute; 
     top: -15px; 
     left: 10px;
-    @include border-radius(100px);
-    @include rotate(30deg);
   }
 
   &:after {
@@ -209,40 +209,40 @@ body{
 //with different speeds, positions, and opacities
 //opacity proportional to the size
 .x1 {
-  left:50%;
   @include animation(moveclouds 15s linear infinite); 
+  left:50%;
 }
 
 .x2 {
+  @include animation(moveclouds 25s linear infinite); 
+  @include scale(0.6);
   left: 30%;
   top:7%;
-  @include scale(0.6);
   opacity: 0.6;
-  @include animation(moveclouds 25s linear infinite); 
 }
 
 .x3 {
+  @include animation(moveclouds 20s linear infinite);
+  @include scale(0.8);
   left: 20%; 
   top: 115%;
-  @include scale(0.8);
   opacity: 0.8;
-  @include animation(moveclouds 20s linear infinite);
 }
 
 .x4 {
+  @include animation(moveclouds 18s linear infinite);
+  @include scale(0.75);
   left: 60%; 
   top: 42%;
-  @include scale(0.75);
   opacity: 0.75;
-  @include animation(moveclouds 18s linear infinite);
 }
 
 .x5 {
+  @include animation(moveclouds 20s linear infinite);
+  @include scale(0.8);
   left: 40%; 
   top: -30px;
-  @include scale(0.8);
   opacity: 0.8;
-  @include animation(moveclouds 20s linear infinite);
 }
 
 //Moving Clouds Keyframe
@@ -284,15 +284,17 @@ body{
 
 /*Tree Branch*/
 .tree-branch{
+  @include rotate(-21deg);
   background-color: brown;
   height: 2%;
   width: 10%;
   position: relative;
   top: -28%;
-  @include rotate(-21deg);
   left: -2%;
 
   &:after {
+    @include rotate(90deg);
+    @include border-radius(100%);
     content: '';
     width: 41%;
     height: 800%;
@@ -300,9 +302,7 @@ body{
     display: inline-block;
     position: absolute;
     left: 80%;
-    @include rotate(90deg);
     top: -350%;
-    @include border-radius(100%);
   }
 }
 
@@ -355,11 +355,11 @@ body{
   text-align: right;
   top: 15%;
   .shine {
+    @include rotateX(17deg);
     font-size: 5rem;
     line-height:0;
     color:blue;
     text-shadow: rgb(187, 187, 187) 0px 1px 0px, rgb(181, 181, 181) 0px 2px 0px, rgb(172, 172, 172) 0px 4px 0px, rgb(160, 160, 160) 0px 6px 0px, rgb(145, 145, 145) 0px 6px 0px, rgb(127, 127, 127) 0px 8px 0px, rgba(0, 0, 0, 0.2) 0px 9px 1px, rgba(0, 0, 0, 0.298039) 0px 30px 0px;
-    @include rotateX(17deg);
   }
 }
 
@@ -381,12 +381,12 @@ body{
 
   //Sprite Image
   .megaman{
+    @include animation(run 0.8s steps(3) infinite);
     width: 174px;
     height: 170px;
     background: url('../images/megamanrun2.png');
     background-position: 0px 0px;
     zoom: 0.5;
-    @include animation(run 0.8s steps(3) infinite);
   }
 }
 
