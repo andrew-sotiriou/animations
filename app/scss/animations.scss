@@ -356,10 +356,39 @@ body{
   top: 15%;
   .shine {
     @include rotateX(17deg);
+    @include animation(pulse 5s ease infinite alternate);
     font-size: 5rem;
     line-height: 0;
     color: blue;
     text-shadow: rgb(187, 187, 187) 0px 1px 0px, rgb(181, 181, 181) 0px 2px 0px, rgb(172, 172, 172) 0px 4px 0px, rgb(160, 160, 160) 0px 6px 0px, rgb(145, 145, 145) 0px 6px 0px, rgb(127, 127, 127) 0px 8px 0px, rgba(0, 0, 0, 0.2) 0px 9px 1px, rgba(0, 0, 0, 0.298039) 0px 30px 0px;
+  }
+}
+
+//Pulsating Text Animation
+@-webkit-keyframes pulse {
+  0%, 100% {
+    color: blue;
+  }
+  50%{
+    color: purple;
+  }
+}
+
+@-moz-keyframes pulse {
+  0%, 100% {
+    color: blue;
+  }
+  50%{
+    color: purple;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    color: blue;
+  }
+  50%{
+    color: purple;
   }
 }
 

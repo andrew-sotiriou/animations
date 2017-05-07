@@ -337,10 +337,31 @@ body {
     -webkit-transform: rotateX(17deg);
     -moz-transform: rotateX(17deg);
     transform: rotateX(17deg);
+    -webkit-animation: pulse 5s ease infinite alternate;
+    -moz-animation: pulse 5s ease infinite alternate;
+    animation: pulse 5s ease infinite alternate;
     font-size: 5rem;
     line-height: 0;
     color: blue;
     text-shadow: #bbbbbb 0px 1px 0px, #b5b5b5 0px 2px 0px, #acacac 0px 4px 0px, #a0a0a0 0px 6px 0px, #919191 0px 6px 0px, #7f7f7f 0px 8px 0px, rgba(0, 0, 0, 0.2) 0px 9px 1px, rgba(0, 0, 0, 0.298039) 0px 30px 0px; }
+
+@-webkit-keyframes pulse {
+  0%, 100% {
+    color: blue; }
+  50% {
+    color: purple; } }
+
+@-moz-keyframes pulse {
+  0%, 100% {
+    color: blue; }
+  50% {
+    color: purple; } }
+
+@keyframes pulse {
+  0%, 100% {
+    color: blue; }
+  50% {
+    color: purple; } }
 
 #walking-path {
   background-color: grey;
