@@ -16,18 +16,22 @@ gulp.task('sass', function() {
 
 gulp.task('watch', ['browserSync', 'sass', 'move-html'], function (){
   gulp.watch('app/scss/**/*.scss', ['sass']); 
+  gulp.watch('app/index.html', ['move-html']); 
   // Other watchers
 })
 
 gulp.task('move-html', function(){
   return gulp.src('app/index.html')
     .pipe(gulp.dest('html'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
 });
 
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
-      baseDir: 'app'
+      baseDir: 'html'
     },
   })
 })
