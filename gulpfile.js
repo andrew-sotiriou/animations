@@ -8,7 +8,7 @@ var browserSync = require('browser-sync').create();
 gulp.task('sass', function() {
   return gulp.src('app/scss/**/*.scss') 
     .pipe(sass())
-    .pipe(gulp.dest('gh-pages/css'))
+    .pipe(gulp.dest('html/css'))
     .pipe(browserSync.reload({
       stream: true
     }))
@@ -22,7 +22,7 @@ gulp.task('watch', ['browserSync', 'sass', 'move-html'], function (){
 
 gulp.task('move-html', function(){
   return gulp.src('app/index.html')
-    .pipe(gulp.dest('gh-pages'))
+    .pipe(gulp.dest('html'))
     .pipe(browserSync.reload({
       stream: true
     }))
@@ -31,7 +31,7 @@ gulp.task('move-html', function(){
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
-      baseDir: 'gh-pages'
+      baseDir: 'html'
     },
   })
 })
