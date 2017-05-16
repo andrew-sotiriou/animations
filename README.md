@@ -1,3 +1,6 @@
+Link to working version via github pages:
+https://andrew-sotiriou.github.io/animations/html/
+
 # animations
 A Page of CSS3-animations
 
