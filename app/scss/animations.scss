@@ -167,6 +167,25 @@ body{
 }
 //Sun and Rays
 
+//Content Box
+.content-box {
+  @include border-radius(10px);
+  background-color: white;
+  height: auto;
+  left: 30%;
+  padding: 10px;
+  position: absolute;
+  width: 100px;
+  text-align: center;
+  top: 50%;
+}
+
+@media (min-width: 550px) {
+  .content-box {
+    left: 45%;
+  }
+}
+
 //Clouds and animations
 
 #cloud-container{

@@ -158,6 +158,23 @@ body {
     -moz-transform: rotate(360deg);
     transform: rotate(360deg); } }
 
+.content-box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background-color: white;
+  height: auto;
+  left: 30%;
+  padding: 10px;
+  position: absolute;
+  width: 100px;
+  text-align: center;
+  top: 50%; }
+
+@media (min-width: 550px) {
+  .content-box {
+    left: 45%; } }
+
 #cloud-container {
   position: relative;
   height: 50%;
