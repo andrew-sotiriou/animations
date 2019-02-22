@@ -165,13 +165,40 @@ body {
   background-color: white;
   height: auto;
   left: 30%;
-  padding: 10px;
+  padding: 15px;
   position: absolute;
-  width: 100px;
+  width: auto;
   text-align: center;
-  top: 50%; }
+  top: 20%; }
 
-@media (min-width: 550px) {
+.content-box-or {
+  display: block;
+  position: relative;
+  z-index: 1; }
+  .content-box-or:before {
+    background-color: #aaaaaa;
+    content: '';
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 12px;
+    width: 100%;
+    z-index: 5; }
+  .content-box-or:after {
+    background: white;
+    color: #565a5c;
+    content: 'OR';
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    left: calc((100% - 50px)/2);
+    padding: 2px 0;
+    position: relative;
+    text-align: center;
+    width: 50px;
+    z-index: 10; }
+
+@media only screen and (min-width: 550px) {
   .content-box {
     left: 45%; } }
 
