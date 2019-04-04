@@ -491,3 +491,29 @@ body {
 @keyframes run {
   100% {
     background-position: -529px; } }
+
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+  /* Hide the tooltip content by default */
+  /* Show tooltip content on hover */
+  /* Position tooltip*/ }
+  [data-tooltip]:before, [data-tooltip]:after {
+    visibility: hidden;
+    opacity: 0; }
+  [data-tooltip]:hover:before, [data-tooltip]:hover:after {
+    visibility: visible;
+    opacity: 1; }
+  [data-tooltip]:before {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #000;
+    background-color: rgba(51, 51, 51, 0.9);
+    color: #fff;
+    content: attr(data-tooltip);
+    left: 15%;
+    padding: 7px;
+    position: absolute;
+    top: 100%;
+    width: 250px; }
